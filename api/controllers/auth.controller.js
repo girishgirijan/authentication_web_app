@@ -37,7 +37,7 @@ export const signin = async (req, res, next) => {
 
     const validUser = await User.findOne(
       { email },
-      { _id: 1, username: 1, email: 1, password: 1 }
+      { _id: 1, username: 1, email: 1, password: 1, profilePicture: 1 }
     );
     if (!validUser) return next(errorHandler(404, "User not found"));
 
